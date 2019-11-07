@@ -1,0 +1,30 @@
+[System]
+Name='size_score'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=2
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='size'
+Range=[12.8 17.2]
+NumMFs=2
+MF1='small':'gaussmf',[1.8 12.8]
+MF2='big':'gaussmf',[1.8 17.2]
+
+[Output1]
+Name='size_score'
+Range=[0.2 1]
+NumMFs=2
+MF1='small':'gaussmf',[0.3397 0.2]
+MF2='big':'gaussmf',[0.3397 1]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1

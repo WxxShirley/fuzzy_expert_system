@@ -1,0 +1,30 @@
+[System]
+Name='beauty'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=2
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='beauty'
+Range=[5 10]
+NumMFs=2
+MF1='ugly':'gaussmf',[2.123 5]
+MF2='beautiful':'gaussmf',[2.123 10]
+
+[Output1]
+Name='beauty_score'
+Range=[0 1]
+NumMFs=2
+MF1='avg':'gaussmf',[0.4247 0]
+MF2='good':'gaussmf',[0.4247 1]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1

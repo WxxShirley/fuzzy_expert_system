@@ -1,0 +1,35 @@
+[System]
+Name='price_score'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=4
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='price'
+Range=[4000 30000]
+NumMFs=4
+MF1='cheap':'gaussmf',[2000 4000]
+MF2='average':'gaussmf',[2000 7000]
+MF3='expensive':'gaussmf',[2000 12000]
+MF4='very_expensive':'trimf',[11290 17000 2.071e+100]
+
+[Output1]
+Name='price_score'
+Range=[0 1]
+NumMFs=3
+MF1='cheap':'gaussmf',[0.177 3.469e-18]
+MF2='avg':'gaussmf',[0.1771 0.5]
+MF3='expensive':'gaussmf',[0.1782 1]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 3 (1) : 1
+4, 3 (1) : 1

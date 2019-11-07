@@ -1,0 +1,32 @@
+[System]
+Name='disk_score'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='disk'
+Range=[240 1100]
+NumMFs=3
+MF1='small':'gaussmf',[182.5 240]
+MF2='large':'gaussmf',[182 670]
+MF3='huge':'gaussmf',[182 1100]
+
+[Output1]
+Name='disk_score'
+Range=[0.5 1]
+NumMFs=2
+MF1='small':'gaussmf',[0.2 0.5]
+MF2='large':'gaussmf',[0.2 1]
+
+[Rules]
+1, 1 (1) : 1
+2, 2 (1) : 1
+3, 2 (1) : 1

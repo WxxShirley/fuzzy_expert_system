@@ -1,0 +1,38 @@
+[System]
+Name='screen'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=1
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='screen1'
+Range=[1920 4000]
+NumMFs=3
+MF1='average':'gaussmf',[441.6 1920]
+MF2='good':'gaussmf',[441.6 2960]
+MF3='excellent':'gaussmf',[441.6 4000]
+
+[Input2]
+Name='screen2'
+Range=[1000 2000]
+NumMFs=3
+MF1='average':'gaussmf',[176.9 1000]
+MF2='good':'gaussmf',[176.9 1500]
+MF3='excellent':'gaussmf',[176.9 2000]
+
+[Output1]
+Name='screen_score'
+Range=[0 1]
+NumMFs=2
+MF1='average':'gaussmf',[0.4247 0]
+MF2='good':'gaussmf',[0.425 1]
+
+[Rules]
+-1 -1, 2 (1) : 1

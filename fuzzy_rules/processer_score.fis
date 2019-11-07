@@ -1,0 +1,59 @@
+[System]
+Name='processer_score'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=1
+NumRules=7
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='memory'
+Range=[6 20]
+NumMFs=2
+MF1='average':'gaussmf',[4 6]
+MF2='big':'gaussmf',[4 17]
+
+[Input2]
+Name='independent_card'
+Range=[-0.5 2.5]
+NumMFs=3
+MF1='no_card':'gaussmf',[0.637 -0.5]
+MF2='good':'gaussmf',[0.6369 1.11]
+MF3='very_good':'gaussmf',[0.6369 2.5]
+
+[Input3]
+Name='cores'
+Range=[1.5 10]
+NumMFs=3
+MF1='poor':'gaussmf',[1.804 1.5]
+MF2='more':'gaussmf',[1.81 6]
+MF3='much':'gaussmf',[1.804 10]
+
+[Input4]
+Name='processor_'
+Range=[4 10]
+NumMFs=2
+MF1='good(i5)':'gaussmf',[2 4]
+MF2='excellent(i7)':'gaussmf',[3.8 10]
+
+[Output1]
+Name='processor_performance'
+Range=[0.2 1]
+NumMFs=3
+MF1='average':'gaussmf',[0.1698 0.2]
+MF2='good':'gaussmf',[0.1696 0.6]
+MF3='excellent':'gaussmf',[0.1696 1]
+
+[Rules]
+1 0 0 1, 1 (1) : 1
+1 -1 -1 1, 2 (1) : 1
+2 -1 0 1, 2 (1) : 1
+2 0 -1 1, 2 (1) : 1
+1 -1 0 2, 3 (1) : 1
+1 0 3 2, 3 (1) : 1
+2 3 0 2, 3 (1) : 1

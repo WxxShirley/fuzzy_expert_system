@@ -1,0 +1,33 @@
+[System]
+Name='battery_performance'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='battery'
+Range=[3 12]
+NumMFs=3
+MF1='short':'gaussmf',[1.911 3]
+MF2='middle':'gaussmf',[1.911 7]
+MF3='long':'gaussmf',[1.91 12]
+
+[Output1]
+Name='battery_performance'
+Range=[0 1]
+NumMFs=3
+MF1='poor':'gaussmf',[0.212 0]
+MF2='average':'gaussmf',[0.212 0.5]
+MF3='good':'gaussmf',[0.212 1]
+
+[Rules]
+3, 3 (1) : 1
+2, 2 (1) : 1
+1, 1 (1) : 1
