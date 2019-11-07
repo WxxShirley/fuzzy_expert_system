@@ -11,8 +11,17 @@
   图片、针对用户需求的指标的得分情况、总推荐指数和其他具体信息。
 
 ## 效果图
+### example1 - 推荐经济入门款
 * 用户选择
 ![用户输入](https://github.com/WxxShirley/fuzzy_expert_system/blob/master/screenshots/1.jpg)
 
 * 返回推荐结果
 ![返回推荐结果](https://github.com/WxxShirley/fuzzy_expert_system/blob/master/screenshots/1_response.jpg)
+
+### example2 - 推荐性能好、性价比高
+* 用户选择
+![用户输入](https://github.com/WxxShirley/fuzzy_expert_system/blob/master/screenshots/2.jpg)
+
+* 返回推荐结果
+![返回推荐结果](https://github.com/WxxShirley/fuzzy_expert_system/blob/master/screenshots/2_response_1.jpg)
+![返回推荐结果](https://github.com/WxxShirley/fuzzy_expert_system/blob/master/screenshots/2_response_2.jpg)
