@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+
+<style>
+    td{
+        width:200px;
+        height:35px;
+    }
+
+    div{
+        display:inline-block;
+    }
+    .div1{
+
+    }
+    .div2{
+
+    }
+
+</style>
+
+<!--
+class="container" style="position:absolute;left:600px;background-color:#7B68EE;font-size:24px;color:#FFFFFF"
+
+-->
+
+<body style="background-color:#E6E6FA">
+
+<div class="header" >
+    <div class = "top" style="position:absolute;left:120px;background-color:#7B68EE;font-size:24px;width:80%;height:45px;color:#FFFFFF;text-align:center">
+  笔记本选购专家系统
+    </div>
+</div>
+
+<div  style="float:left;width:80%;position:absolute;top:60px;left:120px;padding:10px;background-color:#FFFFFF">
+{% for id in id_list %}
+    {% for pc in pc_set %}
+        {% if id == pc.id %}
+    {% for img in img_set %}
+        {% if img.name == pc.name %}
+        <div classs = "div1" style="padding:20px 20px 10px 20px;width:20%"> <img src = {{  img.src  }} width = "160px" height="160px"></div>
+        {% endif %}
+
+    {% endfor %}
+        {% endif %}
+        {% endfor %}
+
+    {% for pc in pc_set %}
+        {% if id == pc.id %}
+    {% for raw_pc in raw_data %}
+       {% if raw_pc.id == pc.id %}
+       <div class="div2" style="padding:0px 30px 0px 30px;width:70%">
+           <table border="1">
+               <tr >
+                   <td>品牌：{{  pc.branch}}</td>
+                   <td>型号名：{{  pc.name}}</td>
+                   <td>价格： ¥{{ pc.price }}</td>
+               </tr>
+               <tr >
+                   <td>处理器: {{ raw_pc.processor }}</td>
+                   <td>内存：{{ raw_pc.memory }}G</td>
+                   <td>硬盘大小：{{ raw_pc.disk }}G</td>
+               </tr>
+               <tr >
+                   <td>屏幕分辨率：{{ raw_pc.screen }}</td>
+                   <td>续航时间：{{ raw_pc.battery }}小时</td>
+                   <td>重量：{{ pc.weight }}Kg</td>
+               </tr>
+           </table>
+       </div>
+        {% endif %}
+   {% endfor %}
+        {% endif %}
+        {% endfor %}
+
+    <div>
+        {% for buf in buffer %}
+            {% if id == buf.id %}
+            <div class = "div1" style="padding:0px 0px 0px 25px;font-size:16px;font-weight:600">
+            {% for p in pc_set %}
+                {% if p.id == id %}
+                <p style="font-size:20px;color:#000000;font-weight:600">{{ p.name }}</p>
+                    {% endif %}
+            {% endfor %}
+                <p style="font-size:14px;color:#A9A9A9;padding:0px 0px 0px 25px">推荐指数：{{ buf.overall_score }}</p>
+            </div>
+            <div class = "div2" style="padding:0px 0px 0px 120px;font-size:14px;">
+            <p style="font-size:16px;color:#F08080">具体得分：</p>
+            {% if buf.routine_score > 0 %}
+                <div  style="font-size:14px;color:#F08080">+ 日常办公: {{ buf.routine_score }}</div>
+                {% endif %}
+            {% if buf.professional_score > 0 %}
+                <div style="font-size:14px;color:#F08080">+ 开发性能: {{ buf.professional_score }}</div>
+                {% endif %}
+            {% if buf.price_score > 0 %}
+                <div style="font-size:14px;color:#F08080">+ 价格: {{ buf.price_score }}</div>
+                {% endif %}
+            {% if buf.enjoyment_score > 0 %}
+                <div style="font-size:14px;color:#F08080">+ 娱乐性能: {{ buf.enjoyment_score }}</div>
+                {% endif %}
+            {% if buf.year_score > 0 %}
+                <div style="font-size:14px;color:#F08080">+ 款式新颖: {{ buf.year_score }}</div>
+                {% endif %}
+            {% if buf.battery_score > 0 %}
+                <div style="font-size:14px;color:#F08080">+ 续航能力: {{ buf.battery_score }}</div>
+                {% endif %}
+            {% if buf.beauty_score > 0 %}
+                <div style="font-size:14px;color:#F08080">+ 机身造型好看: {{ buf.beauty_score }}</div>
+                {% endif %}
+            {% if buf.disk_score > 0 %}
+                <div style="font-size:14px;color:#F08080">+ 硬盘容量大: {{ buf.disk_score }}</div>
+                {% endif %}
+            {% if buf.processor_score > 0 %}
+                <div style="font-size:14px;color:#F08080">+ 处理器性能好: {{ buf.processor_score }}</div>
+                {% endif %}
+            {% if buf.screen_score > 0 %}
+                <div style="font-size:14px;color:#F08080">+ 屏幕分辨率高: {{ buf.screen_score }}</div>
+                {% endif %}
+            {% if buf.size_score > 0 %}
+                <div style="font-size:14px;color:#F08080">+ 屏幕尺寸大: {{ buf.size_score }}</div>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% endfor %}
+    </div>
+    <hr style="width:95%"/>
+{% endfor %}
+
+</div>
+
+</body>
+</html>

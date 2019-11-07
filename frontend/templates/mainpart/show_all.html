@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% for pc in pcs %}
+<div><img src = {{ pc.src }}></div>
+   <div>
+   {{ pc.name }}</div>
+{% endfor %}
+</body>
+</html>

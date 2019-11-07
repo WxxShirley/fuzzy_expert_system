@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body style="background-color:#E6E6FA">
+<div class="header" >
+    <div class="container" style="position:absolute;left:400px;background-color:#7B68EE;font-size:24px;color:#FFFFFF">
+   笔记本选购专家系统
+    </div>
+</div>
+
+
+<!-- tyle = "float:left;width:100%;position:fixed;top:120px;left:210px;">
+    <div class="container"> -->
+
+<div style="float:left;width:50%;position:absolute;top:60px;left:200px;padding:20px;background-color:#FFFFFF">
+    <div class="container"  >
+        <div class="col" align="center" style="text-align:left;">
+            <form class="form-questions"  method="post">
+                {% csrf_token %}
+                <!--多选框-->
+                <div style="font-size:18px;" >您将如何使用本台电脑（多选）</div>
+                <div style="color:#808080;font-size:16px"><input type="checkbox" name="functions[]" value="routine" >日常办公</div>
+                <div style="color:#808080;font-size:16px"><input type="checkbox" name="functions[]" value="professional demands" >专业需求</div>
+                <div style="color:#808080;font-size:16px"><input type="checkbox" name="functions[]" value="enjoyment" >娱乐活动</div>
+
+                <hr style="width:95%;"/>
+
+                <div style="font-size:18px">您对电脑性能有要求吗（多选）</div>
+                <div style="color:#808080;font-size:16px"><input type="checkbox" name="performance[]" value="no demand">无过高性能要求，完成日常办公即可</div>
+                <div style="color:#808080;font-size:16px"><input type="checkbox" name="performance[]" value="screen">屏幕分辨率高</div>
+                <div style="color:#808080;font-size:16px"><input type="checkbox" name="performance[]" value="big_size">屏幕尺寸大</div>
+                <div style="color:#808080;font-size:16px"><input type="checkbox" name="performance[]" value="battery">续航能力强</div>
+                <div style="color:#808080;font-size:16px"><input type="checkbox" name="performance[]" value="disk">硬盘容量大</div>
+                <div style="color:#808080;font-size:16px"><input type="checkbox" name="performance[]" value="strong performance">处理器性能好,流畅运行大型软件或游戏</div>
+                <hr style="width:95%"/>
+
+                <!--单选框-->
+                <div style="font-size:18px">您是否愿意承受笔记本电脑的重量</div>
+                <div style="color:#808080;font-size:16px"><input type="radio" name="weight" value="cannot">不愿接受重的笔记本电脑，必须较为轻便</div>
+                <div style="color:#808080;font-size:16px"><input type="radio" name="weight" value="possible">在能避免负重的情况下尽可能避免负重</div>
+                <div style="color:#808080;font-size:16px"><input type="radio" name="weight" value="okey">没问题，3kg都顶得住</div>
+
+                <hr style="width:95%"/>
+
+                <!--
+                <div style="font-size:18px">您能接受的笔记本电脑尺寸</div>
+                <div style="color:#808080;font-size:16px"><input type="radio" name="size" value="small_size">不愿意接受大尺寸电脑，必须14寸以内</div>
+                <div style="color:#808080;font-size:16px"><input type="radio" name="size" value="big_size">需要大尺寸电脑(14-17寸)</div>
+                <div style="color:#808080;font-size:16px"><input type="radio" name="size" value="none">无固定要求</div>
+
+                <hr style="width:95%"/>
+                -->
+                <!--单选框-->
+                <div style="font-size:18px">您愿意在笔记本电脑上的经济投入</div>
+                <div style="color:#808080;font-size:16px"><input type="radio" name="expense" value="economic">经济，请推荐基本款</div>
+                <div style="color:#808080;font-size:16px"><input type="radio" name="expense" value="average">一般，性价比高的设备</div>
+                <div style="color:#808080;font-size:16px"><input type="radio" name="expense" value="much">很多，一步到位购买高端产品</div>
+
+                <hr style="width:95%"/>
+
+                <div style="font-size:18px">您有什么其他需求吗（多选）</div>
+                <div style="color:#808080;font-size:16px"><input type="checkbox" name="other_demands[]" value="new types">尽量推荐新的机型</div>
+                <div style="color:#808080;font-size:16px"><input type="checkbox" name="other_demands[]" value="beautiful">机身造型好看</div>
+                <div style="color:#808080;font-size:16px"><input type="checkbox" name="other_demands[]" valie="none_other_demands">暂无</div>
+
+                <!--提交按钮 -->
+                <hr style="width:95%"/>
+                <br>
+                <button type="submit"  style="width:100px;height:40px;font-size:18px;border-radius:8px;color:#FFFFFF;background-color:#B0C4DE" align="center">获得推荐</button>
+            </form>
+            <a href = "/recommend/">前往</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
