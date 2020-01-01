@@ -9,3 +9,19 @@
   将笔记本电脑原始数据信息和各项得分信息分别存入数据库中，计算时取出，并根据用户的需求与得分做内积运算。最终选取得分较高的前五名（由于同一型号不同配置的
   笔记本电脑得分相近，这里对同一型号仅保留了得分最高的电脑，后期可能会在展示页面增加链接进入同种型号不同配置的电脑的页面）推荐给用户，并展示笔记本电脑
   图片、针对用户需求的指标的得分情况、总推荐指数和其他具体信息。
+
+## 效果图
+### example1 - 推荐经济入门款
+* 用户选择
+![用户输入](https://github.com/WxxShirley/fuzzy_expert_system/blob/master/screenshots/1.jpg)
+
+* 返回推荐结果
+![返回推荐结果](https://github.com/WxxShirley/fuzzy_expert_system/blob/master/screenshots/1_response.jpg)
+
+### example2 - 推荐性能好、性价比高
+* 用户选择
+![用户输入](https://github.com/WxxShirley/fuzzy_expert_system/blob/master/screenshots/2.jpg)
+
+* 返回推荐结果
+![返回推荐结果](https://github.com/WxxShirley/fuzzy_expert_system/blob/master/screenshots/2_response_1.jpg)
+![返回推荐结果](https://github.com/WxxShirley/fuzzy_expert_system/blob/master/screenshots/2_response_2.jpg)
