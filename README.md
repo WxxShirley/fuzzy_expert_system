@@ -8,7 +8,7 @@
      IF 处理器为i5 and 有独立显卡，THEM 处理器性能较好
      IF 处理器为i5 and 内存容量为 8G and 无独立显卡，处理器性能一般。 （实际制订的规则更多，也更复杂）
   * 模糊设计处理
-    ![模糊设计处理](https://github.com/WxxShirley/fuzzy_expert_system/blob/master/flowchart/模糊设计处理.png)
+    ![模糊设计处理](https://github.com/WxxShirley/fuzzy_expert_system/blob/master/flowchart/模糊处理设计.png)
 * 使用Django开发，前端引导用户填写问卷，选择自己对笔记本电脑的要求（包括用途、对性能如屏幕分辨率、处理器、续航时间等要求、预算）。
   将笔记本电脑原始数据信息和各项得分信息分别存入数据库中，计算时取出，并根据用户的需求与得分做内积运算。最终选取得分较高的前五名（由于同一型号不同配置的
   笔记本电脑得分相近，这里对同一型号仅保留了得分最高的电脑，后期可能会在展示页面增加链接进入同种型号不同配置的电脑的页面）推荐给用户，并展示笔记本电脑
